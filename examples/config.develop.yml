@@ -1,0 +1,6 @@
+level1:
+  sublvl11:
+    prop555: false
+level2:
+  sublvl21:
+    prop222: 'overrided'

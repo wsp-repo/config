@@ -1,0 +1,14 @@
+level1:
+  sublvl11:
+    prop111: 1234
+    prop222: 'qwerty'
+    prop333: '1h 3s'
+    prop444: '1mb'
+    prop555: true
+  sublvl22:
+    - value1
+    - value2
+    - value3
+level2:
+  sublvl21:
+    prop222: 'orig'
