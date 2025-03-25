@@ -39,8 +39,8 @@
     "test": "jest --config ./jest.unit.js"
   },
   "dependencies": {
-    "@zalib/ajv": "1.0.2",
-    "@zalib/core": "1.0.3",
+    "@zalib/ajv": "1.0.3",
+    "@zalib/core": "1.0.4",
     "deepmerge": "4.3.1",
     "jsonpath-plus": "10.3.0",
     "yaml": "2.7.0"

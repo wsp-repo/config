@@ -31,7 +31,7 @@ function getFileWithCheck(filePath: string, required?: true): string {
 /**
  * Возвращает список файлов для чтения конфигурации
  */
-export function getYamlFiles(path?: string): string[] {
+export function defYamlFiles(path?: string): string[] {
   const rootPath = path || getRootPath();
   const envSuffix = getFileSuffix();
 

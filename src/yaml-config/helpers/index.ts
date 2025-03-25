@@ -1,2 +1,2 @@
-export * from './files';
-export * from './loader';
+export { defYamlFiles } from './files';
+export { initYamlConfig } from './loader';

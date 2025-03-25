@@ -140,8 +140,10 @@ export function getYamlValue<T>(
     (memo, config) => {
       const data = getJsonPath<T>(config, path);
 
-      // { value: data } нужно для мержа ниже
-      if (data) memo.push({ value: data });
+      if (isDefined(data)) {
+        // { value: data } для мержа ниже
+        memo.push({ value: data });
+      }
 
       return memo;
     },
