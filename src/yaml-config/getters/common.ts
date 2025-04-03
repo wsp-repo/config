@@ -5,7 +5,7 @@
 import { ajvErrors, ajvFactory, AjvSchema } from '@zalib/ajv';
 import { isDefined, isUndefined } from '@zalib/core';
 import deepmerge from 'deepmerge';
-import { JSONPath } from 'jsonpath-plus';
+import { get as getValueByPath } from 'lodash';
 
 import { getConfigObjects } from '../helpers/loader';
 
@@ -16,9 +16,6 @@ import {
   YamlOptions,
   YamlReqOptions,
 } from '../types';
-
-// поиск вхождений: "..", "[X::]", "[::X]"
-const regArray = /(\.\.)|(\[[^\]]*?[^\]\d][^\]]*?\])/;
 
 const ajvValidator = ajvFactory();
 
@@ -38,9 +35,7 @@ function throwError(message: string, data?: unknown): never {
  */
 function getJsonPath<T>(json: any, path: string): Partial<T> | undefined {
   try {
-    const result = JSONPath({ json, path });
-
-    return path.match(regArray) ? result : result[0];
+    return getValueByPath(json, path);
   } catch (error) {
     const { message } = error as Error;
 
