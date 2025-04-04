@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@zalib/ajv": "1.0.5",
-    "@zalib/core": "1.0.7",
+    "@zalib/core": "1.0.8",
     "lodash": "4.17.21",
     "yaml": "2.7.0"
   },

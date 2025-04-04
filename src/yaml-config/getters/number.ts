@@ -1,22 +1,22 @@
-import { numberSchema } from '../schemas';
+import { numberSchema } from '../../schemas';
 import { getYamlValue } from './common';
 
-import { YamlBaseOptions, YamlOptions, YamlReqOptions } from '../types';
+import { BaseOptions, Options, ReqOptions } from '../../types';
 
 /**
  * Возвращает значение числового конфига
  */
 export function getYamlNumber(
   path: string,
-  options?: YamlReqOptions<number>,
+  options?: ReqOptions<number>,
 ): number;
 export function getYamlNumber(
   path: string,
-  options?: YamlBaseOptions<number>,
+  options?: BaseOptions<number>,
 ): number | undefined;
 export function getYamlNumber(
   jsonPath: string,
-  options?: YamlOptions<number>,
+  options?: Options<number>,
 ): number | undefined {
   return getYamlValue<number>(jsonPath, {
     schema: numberSchema,
