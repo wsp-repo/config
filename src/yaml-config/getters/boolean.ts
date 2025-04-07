@@ -1,22 +1,22 @@
-import { booleanSchema } from '../schemas';
+import { booleanSchema } from '../../schemas';
 import { getYamlValue } from './common';
 
-import { YamlBaseOptions, YamlOptions, YamlReqOptions } from '../types';
+import { BaseOptions, Options, ReqOptions } from '../../types';
 
 /**
  * Возвращает значение булева конфига
  */
 export function getYamlBoolean(
   path: string,
-  options?: YamlReqOptions<boolean>,
+  options?: ReqOptions<boolean>,
 ): boolean;
 export function getYamlBoolean(
   path: string,
-  options?: YamlBaseOptions<boolean>,
+  options?: BaseOptions<boolean>,
 ): boolean | undefined;
 export function getYamlBoolean(
   jsonPath: string,
-  options?: YamlOptions<boolean>,
+  options?: Options<boolean>,
 ): boolean | undefined {
   return getYamlValue<boolean>(jsonPath, {
     schema: booleanSchema,

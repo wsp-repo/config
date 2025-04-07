@@ -1,18 +1,18 @@
 import { getYamlValue } from './common';
 
-import { YamlBaseOptions, YamlOptions, YamlReqOptions } from '../types';
+import { BaseOptions, Options, ReqOptions } from '../../types';
 
 /**
  * Возвращает значение кастомного конфига
  */
-export function getYamlCustom<T>(path: string, options?: YamlReqOptions<T>): T;
+export function getYamlCustom<T>(path: string, options?: ReqOptions<T>): T;
 export function getYamlCustom<T>(
   path: string,
-  options?: YamlBaseOptions<T>,
+  options?: BaseOptions<T>,
 ): T | undefined;
 export function getYamlCustom<T>(
   jsonPath: string,
-  options?: YamlOptions<T>,
+  options?: Options<T>,
 ): T | undefined {
   return getYamlValue<T>(jsonPath, options);
 }

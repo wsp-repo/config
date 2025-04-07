@@ -1,4 +1,4 @@
-import { AjvSchema } from '@zalib/ajv/dist';
+import { AjvSchema } from '@zalib/ajv';
 
 import {
   getYamlBoolean,
@@ -39,28 +39,28 @@ level2:
 */
 
 console.warn(
-  `getYamlNumber('$.level1.sublvl11.prop111')`,
-  getYamlNumber('$.level1.sublvl11.prop111'),
+  "getYamlNumber('level1.sublvl11.prop111')",
+  getYamlNumber('level1.sublvl11.prop111'),
 );
 
 console.warn(
-  `getYamlString('$.level1.sublvl11.prop222')`,
-  getYamlString('$.level1.sublvl11.prop222'),
+  "getYamlString('level1.sublvl11.prop222')",
+  getYamlString('level1.sublvl11.prop222'),
 );
 
 console.warn(
-  `getYamlTimespan('$.level1.sublvl11.prop333')`,
-  getYamlTimespan('$.level1.sublvl11.prop333'),
+  "getYamlTimespan('level1.sublvl11.prop333')",
+  getYamlTimespan('level1.sublvl11.prop333'),
 );
 
 console.warn(
-  `getYamlFileSize('$.level1.sublvl11.prop444')`,
-  getYamlFileSize('$.level1.sublvl11.prop444'),
+  "getYamlFileSize('level1.sublvl11.prop444')",
+  getYamlFileSize('level1.sublvl11.prop444'),
 );
 
 console.warn(
-  `getYamlBoolean('$.level1.sublvl11.prop555')`,
-  getYamlBoolean('$.level1.sublvl11.prop555'),
+  "getYamlBoolean('level1.sublvl11.prop555')",
+  getYamlBoolean('level1.sublvl11.prop555'),
 );
 
 const schemaArray: AjvSchema<string[]> = {
@@ -69,11 +69,11 @@ const schemaArray: AjvSchema<string[]> = {
 };
 
 console.warn(
-  `getYamlCustom('$.level1.sublvl22')`,
-  getYamlCustom('$.level1.sublvl22', { schema: schemaArray }),
+  "getYamlCustom('level1.sublvl22')",
+  getYamlCustom('level1.sublvl22', { schema: schemaArray }),
 );
 
 console.warn(
-  `getYamlString('$.level2.sublvl21.prop222')`,
-  getYamlString('$.level2.sublvl21.prop222'),
+  "getYamlString('level2.sublvl21.prop222')",
+  getYamlString('level2.sublvl21.prop222'),
 );

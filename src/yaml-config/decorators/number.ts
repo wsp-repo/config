@@ -2,22 +2,22 @@
 import { getYamlNumber } from '../getters';
 import { throwSetter } from './common';
 
-import { YamlBaseOptions, YamlOptions, YamlReqOptions } from '../types';
+import { BaseOptions, Options, ReqOptions } from '../../types';
 
 /**
  * Декоратор для чтения конфига
  */
 export function YamlNumber(
   path: string,
-  options?: YamlReqOptions<number>,
+  options?: ReqOptions<number>,
 ): PropertyDecorator;
 export function YamlNumber(
   path: string,
-  options?: YamlBaseOptions<number>,
+  options?: BaseOptions<number>,
 ): PropertyDecorator;
 export function YamlNumber(
   jsonPath: string,
-  options?: YamlOptions<number>,
+  options?: Options<number>,
 ): PropertyDecorator {
   return (target: object, propertyKey: string | symbol): void => {
     const propValue = getYamlNumber(jsonPath, options);

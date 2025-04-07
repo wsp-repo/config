@@ -2,22 +2,22 @@
 import { getYamlBoolean } from '../getters';
 import { throwSetter } from './common';
 
-import { YamlBaseOptions, YamlOptions, YamlReqOptions } from '../types';
+import { BaseOptions, Options, ReqOptions } from '../../types';
 
 /**
  * Декоратор для чтения конфига
  */
 export function YamlBoolean(
   path: string,
-  options?: YamlReqOptions<boolean>,
+  options?: ReqOptions<boolean>,
 ): PropertyDecorator;
 export function YamlBoolean(
   path: string,
-  options?: YamlBaseOptions<boolean>,
+  options?: BaseOptions<boolean>,
 ): PropertyDecorator;
 export function YamlBoolean(
   jsonPath: string,
-  options?: YamlOptions<boolean>,
+  options?: Options<boolean>,
 ): PropertyDecorator {
   return (target: object, propertyKey: string | symbol): void => {
     const propValue = getYamlBoolean(jsonPath, options);

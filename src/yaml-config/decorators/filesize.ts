@@ -2,22 +2,22 @@
 import { getYamlFileSize } from '../getters';
 import { throwSetter } from './common';
 
-import { YamlBaseOptions, YamlOptions, YamlReqOptions } from '../types';
+import { BaseOptions, Options, ReqOptions } from '../../types';
 
 /**
  * Декоратор для чтения конфига
  */
 export function YamlFileSize(
   path: string,
-  options?: YamlReqOptions<string>,
+  options?: ReqOptions<string>,
 ): PropertyDecorator;
 export function YamlFileSize(
   path: string,
-  options?: YamlBaseOptions<string>,
+  options?: BaseOptions<string>,
 ): PropertyDecorator;
 export function YamlFileSize(
   jsonPath: string,
-  options?: YamlOptions<string>,
+  options?: Options<string>,
 ): PropertyDecorator {
   return (target: object, propertyKey: string | symbol): void => {
     const propValue = getYamlFileSize(jsonPath, options);
